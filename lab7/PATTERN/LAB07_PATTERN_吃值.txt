@@ -1,0 +1,132 @@
+//############################################################################
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+//   (C) Copyright Laboratory System Integration and Silicon Implementation
+//   All Right Reserved
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//
+//   2020 ICLAB FALL Course
+//   Lab03       : Testbench and Pattern
+//   Author      : Yi-Ting Wang
+//
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//
+//   File Name   : PATTERN.v
+//   Module Name : PATTERN  
+//   Release version : v1.0
+//
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//############################################################################
+`ifdef RTL
+	`timescale 1ns/1ps
+	`include "PN.v"
+	`define CYCLE_TIME_clk1 19
+	`define CYCLE_TIME_clk2 6
+	`define CYCLE_TIME_clk3 11
+`endif
+`ifdef GATE
+	`timescale 1ns/1ps
+	`include "PN_SYN.v"
+	`define CYCLE_TIME_clk1 19
+	`define CYCLE_TIME_clk2 6
+	`define CYCLE_TIME_clk3 11
+`endif
+
+
+module PATTERN(
+    // Output signals
+	clk_1,
+	clk_2,
+	clk_3,
+    rst_n,
+	in_valid,
+	in,
+	mode,
+	operator,
+
+    // Input signals
+    out_valid,
+    out
+);
+
+//================================================================ 
+//   INPUT AND OUTPUT DECLARATION
+//================================================================
+output reg clk_1, clk_2, clk_3, rst_n, in_valid, mode, operator;
+output reg [2:0] in;
+input out_valid;
+input [63:0] out;
+ 
+real CYCLE_clk1 = 19;
+real CYCLE_clk2 = 6;
+real CYCLE_clk3 = 11;
+
+always	#(CYCLE_clk1/2.0) clk_1 = ~clk_1;
+always	#(CYCLE_clk2/2.0) clk_2 = ~clk_2;
+always	#(CYCLE_clk3/2.0) clk_3 = ~clk_3;
+
+initial begin
+    force clk_1 = 0;
+	force clk_2 = 0;
+	force clk_3 = 0;
+	rst_n = 1'b1;
+	in_valid = 1'b0;
+	mode = 1'bx;
+	in = 3'bx;
+	operator = 1'bx;
+	Reset_Signal_task;
+	repeat(3)@(negedge clk_1);
+	in_valid = 1;
+	mode = 0;
+	in = 3'b000;
+	operator = 1;
+	@(negedge clk_1);
+	in_valid = 1;
+	mode = 1'bx;
+	in = 3'b000;
+	operator = 1;
+	@(negedge clk_1);
+	in_valid = 1;
+	in = 3'b000;
+	operator = 1;
+	@(negedge clk_1);
+	in_valid = 1;
+	in = 3'b101;
+	operator = 0;
+	@(negedge clk_1);
+	in_valid = 1;
+	in = 3'b100;
+	operator = 0;
+	@(negedge clk_1);
+	in_valid = 1;
+	in = 3'b010;
+	operator = 0;
+	@(negedge clk_1);
+	in_valid = 1;
+	in = 3'b001;
+	operator = 0;
+	@(negedge clk_1);
+	in_valid = 0;
+	in = 3'bx;
+	operator = 1'bx;
+	repeat(100)@(negedge clk_1);
+	$finish;
+end
+
+task Reset_Signal_task; begin	
+	release clk_1;
+	release clk_2;
+	release clk_3;
+	@(negedge clk_1); rst_n = 1'b0;
+	@(negedge clk_1); rst_n = 1'b1;
+	if( (out_valid !== 1'b0) || (out !== 64'd0) ) begin
+		$display("******************************************************************");
+        $display("      Output signal should be 0 after initial RESET   at%8t       ", $time);
+        $display("******************************************************************");
+        repeat(2) #CYCLE_clk1;
+        //$finish;
+	end
+	repeat(3)@(negedge clk_1);
+end endtask
+
+endmodule
+

@@ -1,0 +1,124 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : SMC
+Version: K-2015.06-SP1
+Date   : Sun Mar  7 23:03:48 2021
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: V_GS_3[0] (input port)
+  Endpoint: out_n[7] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  V_GS_3[0] (in)                           0.00       0.00 f
+  U851/Y (XNOR2XL)                         0.71       0.71 r
+  U1988/Y (XNOR2XL)                        0.41       1.12 f
+  U2006/Y (OAI22XL)                        0.38       1.50 r
+  U1987/S (ADDHXL)                         0.31       1.81 r
+  U2005/Y (INVXL)                          0.19       1.99 f
+  U1959/Y (OAI22XL)                        0.53       2.52 r
+  U2024/Y (XNOR2XL)                        0.54       3.06 r
+  U2023/Y (XOR2XL)                         0.37       3.43 r
+  U1375/Y (NOR2X1)                         0.09       3.52 f
+  U1358/Y (OAI21X1)                        0.24       3.76 r
+  U968/Y (AOI21XL)                         0.16       3.92 f
+  U966/Y (XOR2X1)                          0.26       4.18 f
+  U3284/Y (NAND2X1)                        0.15       4.33 r
+  U1281/Y (NAND2XL)                        0.10       4.44 f
+  U1267/Y (OAI21XL)                        0.31       4.74 r
+  U949/Y (XOR2XL)                          0.44       5.18 r
+  U837/Y (XOR2XL)                          0.36       5.54 r
+  U1240/Y (NAND2XL)                        0.16       5.70 f
+  U941/Y (OAI22XL)                         0.30       6.00 r
+  U843/Y (XOR2XL)                          0.48       6.48 r
+  U1214/Y (NAND2XL)                        0.08       6.56 f
+  U933/Y (NAND2XL)                         0.14       6.70 r
+  U1199/Y (AOI21XL)                        0.11       6.81 f
+  U2455/Y (NAND2XL)                        0.14       6.95 r
+  U2617/Y (INVXL)                          0.11       7.06 f
+  U1186/Y (OAI22XL)                        0.15       7.21 r
+  U1183/Y (OAI22XL)                        0.16       7.36 f
+  U2588/Y (OAI21XL)                        0.12       7.48 r
+  U2586/Y (NAND2XL)                        0.09       7.57 f
+  U1181/Y (NAND2XL)                        0.11       7.67 r
+  U1179/Y (OAI21X1)                        0.15       7.82 f
+  U1177/CON (AFHCONX2)                     0.47       8.29 r
+  U3507/Y (MXI2X1)                         0.46       8.75 f
+  U2580/Y (NAND2XL)                        0.16       8.90 r
+  U2579/Y (OAI21XL)                        0.10       9.01 f
+  U2678/Y (OAI22XL)                        0.18       9.18 r
+  U2677/Y (OAI21XL)                        0.12       9.31 f
+  U2675/Y (NAND2XL)                        0.12       9.43 r
+  U3510/Y (NAND2X1)                        0.08       9.50 f
+  U1167/Y (NAND2X1)                        0.15       9.66 r
+  U3512/Y (OAI21X4)                        0.21       9.87 f
+  U1164/Y (MXI2X1)                         0.22      10.09 r
+  U2469/Y (INVXL)                          0.11      10.20 f
+  U1158/Y (NAND2XL)                        0.10      10.30 r
+  U1156/Y (OAI21XL)                        0.11      10.41 f
+  U1155/Y (OAI22X1)                        0.26      10.67 r
+  U3519/CON (AFHCONX2)                     0.15      10.82 f
+  U1153/Y (AOI2BB2XL)                      0.30      11.12 f
+  U3520/Y (NAND2X1)                        0.12      11.24 r
+  U1150/Y (NAND2X1)                        0.13      11.36 f
+  U3521/Y (OAI21X4)                        0.21      11.57 r
+  U1653/Y (MXI2X1)                         0.32      11.90 r
+  U3526/CON (AFHCONX2)                     0.18      12.08 f
+  U3527/CON (AFHCONX2)                     0.19      12.26 r
+  U2554/Y (INVXL)                          0.06      12.33 f
+  U2669/Y (AOI2BB1X1)                      0.28      12.60 f
+  U903/Y (OAI21X1)                         0.19      12.80 r
+  U902/Y (OAI21X1)                         0.16      12.95 f
+  U1136/CON (AFHCONX2)                     0.18      13.14 r
+  U1135/Y (BUFX8)                          0.22      13.35 r
+  U745/Y (MXI2X1)                          0.30      13.65 f
+  U3532/CON (AFHCONX2)                     0.36      14.02 r
+  U3533/CON (AFHCONX2)                     0.14      14.16 f
+  U2699/Y (AOI2BB2XL)                      0.30      14.45 f
+  U1640/Y (NAND2X1)                        0.11      14.56 r
+  U1129/Y (OAI21X1)                        0.12      14.68 f
+  U3538/Y (OAI22X1)                        0.16      14.84 r
+  U3540/Y (OAI22X1)                        0.16      15.00 f
+  U1126/Y (BUFX4)                          0.26      15.26 f
+  U1652/Y (MXI2X1)                         0.18      15.43 r
+  U3556/CO (ADDFHX1)                       0.29      15.73 r
+  U3557/CO (ADDFX1)                        0.31      16.04 r
+  U1121/Y (NAND2XL)                        0.10      16.14 f
+  U1643/Y (AOI222X1)                       0.36      16.50 r
+  U888/Y (OR2XL)                           0.20      16.69 r
+  U1119/Y (OAI2BB1X1)                      0.10      16.79 f
+  U1641/CO (ADDFHX4)                       0.38      17.18 f
+  U1117/Y (MXI2X1)                         0.23      17.40 f
+  U1110/Y (OAI22X1)                        0.25      17.65 r
+  U2769/S (CMPR42X1)                       1.00      18.65 f
+  U2777/Y (OR2X1)                          0.27      18.92 f
+  U1076/Y (AOI21X1)                        0.18      19.10 r
+  U742/Y (OAI21XL)                         0.20      19.30 f
+  U876/Y (AOI21X2)                         0.29      19.59 r
+  U2793/Y (OAI21X1)                        0.12      19.70 f
+  U872/Y (XNOR2X1)                         0.26      19.97 r
+  out_n[7] (out)                           0.00      19.97 r
+  data arrival time                                  19.97
+
+  max_delay                               20.00      20.00
+  output external delay                    0.00      20.00
+  data required time                                 20.00
+  -----------------------------------------------------------
+  data required time                                 20.00
+  data arrival time                                 -19.97
+  -----------------------------------------------------------
+  slack (MET)                                         0.03
+
+
+1
